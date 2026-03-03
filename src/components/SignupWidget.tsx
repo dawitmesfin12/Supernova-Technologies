@@ -6,6 +6,15 @@ interface SignupWidgetProps {
   variant?: "inline" | "card";
 }
 
+const MIN_WORDS = 100;
+const MAX_WORDS = 500;
+
+const countWords = (text: string) =>
+  text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+
+const isValidEmail = (value: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+
 const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
   const [name, setName] = useState("");
   const [service, setService] = useState("");
@@ -13,20 +22,44 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
   const [details, setDetails] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState("");
   const [detailsError, setDetailsError] = useState("");
+
+  const wordCount = countWords(details);
+  const emailValid = isValidEmail(email.trim());
+  const detailsValid = wordCount >= MIN_WORDS && wordCount <= MAX_WORDS;
+  const formReady = emailValid && detailsValid;
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+
+    if (!email.trim()) {
+      setEmailError("Please enter your email address.");
+      return;
+    }
+
+    if (!emailValid) {
+      setEmailError("Please enter a valid email address (e.g. you@company.com).");
+      return;
+    }
 
     if (!details.trim()) {
       setDetailsError("Tell us briefly what you want us to design or build.");
       return;
     }
 
+    if (wordCount < MIN_WORDS) {
+      setDetailsError(`Please write at least ${MIN_WORDS} words (currently ${wordCount}).`);
+      return;
+    }
+
+    if (wordCount > MAX_WORDS) {
+      setDetailsError(`Please keep it under ${MAX_WORDS} words (currently ${wordCount}).`);
+      return;
+    }
+
     setLoading(true);
 
-    // Simulate async request – this is where an API call would go.
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
@@ -55,7 +88,7 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
         {submitted ? (
           <div className="nv-signup-success">
             <h3>
-              Thank you{ name ? `, ${name}` : "!"}
+              Thank you{name ? `, ${name}` : "!"}
             </h3>
             <p>
               We&apos;ve received your request. We&apos;ll get back to you at{" "}
@@ -98,41 +131,46 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
               <input
                 id="nv-email"
                 type="email"
-                required
                 placeholder="you@company.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (emailError) setEmailError("");
+                }}
               />
+              {emailError ? <p className="nv-field-error">{emailError}</p> : null}
             </div>
 
             <div className="nv-field">
               <label htmlFor="nv-details">
-                Briefly describe what you want us to build{" "}
-                <span className="nv-optional">(up to 400 words)</span>
+                Describe what you want us to build{" "}
+                <span className="nv-optional">({MIN_WORDS}–{MAX_WORDS} words)</span>
               </label>
               <textarea
                 id="nv-details"
-                rows={4}
-                maxLength={400 * 6} // simple upper guard, UI guidance is 400 words
+                rows={5}
                 placeholder="For example: a booking website for our hotel with online payments and an admin dashboard for staff..."
                 value={details}
                 onChange={(e) => {
                   setDetails(e.target.value);
-                  if (detailsError && e.target.value.trim()) {
-                    setDetailsError("");
-                  }
+                  if (detailsError) setDetailsError("");
                 }}
               />
-              {detailsError ? <p className="nv-field-error">{detailsError}</p> : null}
+              <div className="nv-field-meta">
+                <span className={`nv-word-count${detailsValid ? " nv-word-count--ok" : ""}${wordCount > MAX_WORDS ? " nv-word-count--over" : ""}`}>
+                  {wordCount} / {MIN_WORDS}–{MAX_WORDS} words
+                </span>
+                {detailsError ? <span className="nv-field-error">{detailsError}</span> : null}
+              </div>
             </div>
 
             <div className="nv-actions">
               <button
                 type="submit"
                 className="nv-btn nv-btn-primary"
-                disabled={loading || !email.trim()}
+                disabled={loading}
               >
-                {loading ? "Submitting..." : "Request   Proposal"}
+                {loading ? "Submitting..." : "Request Proposal"}
               </button>
               <p className="nv-helper-text">No spam. Just one clear, tailored response.</p>
             </div>
@@ -144,4 +182,3 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
 };
 
 export default SignupWidget;
-
