@@ -988,7 +988,8 @@ main {
   .nv-features-grid,
   .nv-about-grid,
   .nv-steps-row,
-  .nv-testimonials-grid {
+  .nv-testimonials-grid,
+  .nv-platform-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1089,7 +1090,8 @@ main {
   }
 
   .nv-dev-grid,
-  .nv-stats-inner {
+  .nv-stats-inner,
+  .nv-outsource-stats {
     grid-template-columns: minmax(0, 1fr);
   }
 
