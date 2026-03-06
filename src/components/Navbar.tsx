@@ -1,5 +1,6 @@
 import type React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import supernovaLogo from "../assets/Component 1.svg";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -9,7 +10,7 @@ const Navbar: React.FC = () => {
       <div className="nv-container nv-navbar-inner">
         <div className="nv-brand">
           <div className="nv-logo-placeholder">
-            <span className="nv-logo-mark">✶</span>
+            <img src={supernovaLogo} alt="Supernova Technologies logo" className="nv-logo-image" />
           </div>
           <div className="nv-brand-text">
             <Link to="/" className="nv-brand-name">
