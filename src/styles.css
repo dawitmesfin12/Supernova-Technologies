@@ -421,6 +421,59 @@ body {
   font-size: 0.9rem;
 }
 
+.nv-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.nv-testimonial-card {
+  padding: 1.4rem 1.3rem 1.3rem;
+}
+
+.nv-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.nv-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.3), rgba(15, 23, 42, 1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.nv-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nv-testimonial-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 0 0 0.1rem;
+}
+
+.nv-testimonial-meta {
+  font-size: 0.8rem;
+  color: var(--nv-text-muted);
+}
+
+.nv-testimonial-quote {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--nv-text);
+}
+
 .nv-footer {
   border-top: 1px solid rgba(148, 163, 184, 0.2);
   padding: 1.4rem 0 1.6rem;
@@ -471,6 +524,10 @@ body {
   }
 
   .nv-features-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nv-testimonials-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 

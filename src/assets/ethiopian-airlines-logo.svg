@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ethiopianGradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" />
+      <stop offset="1" stop-color="#F9A8D4" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="999" fill="url(#ethiopianGradient)" />
+  <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="system-ui, -apple-system"
+    font-size="20" font-weight="700" fill="#0F172A">
+    EH
+  </text>
+</svg>

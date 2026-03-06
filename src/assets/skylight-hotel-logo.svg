@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skylightGradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9" />
+      <stop offset="1" stop-color="#F9A8D4" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="18" fill="#020617" />
+  <circle cx="32" cy="24" r="14" fill="url(#skylightGradient)" />
+  <rect x="16" y="34" width="32" height="12" rx="6" fill="#0B1120" />
+  <text x="50%" y="54%" text-anchor="middle" font-family="system-ui, -apple-system" font-size="10" font-weight="600"
+    fill="#E5E7EB">
+    SKY HOTEL
+  </text>
+</svg>
