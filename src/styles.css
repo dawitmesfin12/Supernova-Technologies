@@ -64,18 +64,21 @@ body {
 }
 
 .nv-logo-placeholder {
-  width: 36px;
-  height: 36px;
-  border-radius: 14px;
-  background: radial-gradient(circle at 30% 0, var(--nv-accent-secondary), var(--nv-accent));
+  width: 180px;
+  height: 56px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+  overflow: hidden;
 }
 
-.nv-logo-mark {
-  font-size: 1.1rem;
+.nv-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .nv-brand-text {
