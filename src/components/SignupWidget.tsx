@@ -31,10 +31,18 @@ const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
   return (
     <div className={containerClass}>
       <form className="nv-signup-form" onSubmit={handleSubmit}>
-        <div className="nv-signup-heading">
-          <h2>Start your next software project</h2>
-          <p>Share a few details and we&apos;ll reach out within one business day.</p>
-        </div>
+        {!submitted && (
+          <div className="nv-signup-header">
+            <div className="nv-signup-topbar" />
+            <div className="nv-signup-heading">
+              <h2>Start your next software project</h2>
+              <p>
+                Tell us what you need and we&apos;ll design and build the right software or website
+                on time for your business.
+              </p>
+            </div>
+          </div>
+        )}
 
         {submitted ? (
           <div className="nv-signup-success">
