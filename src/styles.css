@@ -1,18 +1,18 @@
 :root {
-  color-scheme: dark;
-  --nv-bg: #020617;
-  --nv-bg-elevated: rgba(15, 23, 42, 0.9);
-  --nv-border-subtle: rgba(148, 163, 184, 0.2);
-  --nv-text: #e5e7eb;
-  --nv-text-muted: #9ca3af;
-  /* primary / secondary / tertiary brand colors */
-  --nv-accent: #2563eb; /* primary blue */
-  --nv-accent-secondary: #38bdf8; /* light blue */
-  --nv-accent-tertiary: #ec4899; /* strong pink */
-  --nv-accent-soft: rgba(56, 189, 248, 0.16);
+  color-scheme: light;
+  --nv-bg: #f5f5f5;
+  --nv-bg-elevated: #ffffff;
+  --nv-border-subtle: rgba(15, 23, 42, 0.07);
+  --nv-text: #111827;
+  --nv-text-muted: #6b7280;
+  /* primary / secondary / tertiary brand colors – mint / green */
+  --nv-accent: #10b981; /* primary green */
+  --nv-accent-secondary: #6ee7b7; /* light mint */
+  --nv-accent-tertiary: #22c55e; /* strong green */
+  --nv-accent-soft: rgba(16, 185, 129, 0.18);
   --nv-radius-lg: 18px;
   --nv-radius-full: 999px;
-  --nv-shadow-soft: 0 22px 45px rgba(15, 23, 42, 0.6);
+  --nv-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.14);
 }
 
 *,
@@ -24,7 +24,7 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-  background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
+  background: radial-gradient(circle at top left, #e0fdf4 0, #f5f5f5 55%, #f5f5f5 100%);
   color: var(--nv-text);
   min-height: 100vh;
 }
@@ -44,9 +44,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(18px);
-  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.65));
-  border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+  background: #ffffff;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 .nv-navbar-inner {
@@ -106,7 +106,7 @@ body {
 }
 
 .nv-nav-link {
-  color: rgba(226, 232, 240, 0.78);
+  color: #111827;
   text-decoration: none;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
@@ -124,26 +124,17 @@ body {
 }
 
 .nv-nav-link:hover {
-  color: #e5e7eb;
-  background: radial-gradient(
-    circle at top,
-    rgba(56, 189, 248, 0.16),
-    rgba(15, 23, 42, 0.96)
-  );
-  border-color: rgba(56, 189, 248, 0.45);
+  color: #065f46;
+  background: rgba(110, 231, 183, 0.18);
+  border-color: rgba(16, 185, 129, 0.5);
   transform: translateY(-1px);
 }
 
 .nv-nav-link-active {
-  color: #f9fafb;
-  background: linear-gradient(
-    135deg,
-    var(--nv-accent),
-    var(--nv-accent-secondary),
-    var(--nv-accent-tertiary)
-  );
+  color: #064e3b;
+  background: #d1fae5;
   border-color: transparent;
-  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.7);
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.25);
 }
 }
 
@@ -167,17 +158,17 @@ body {
 }
 
 .nv-btn-primary {
-  background: linear-gradient(135deg, #f97316, #facc15);
+  background: linear-gradient(135deg, #10b981, #6ee7b7);
   color: #ffffff;
   font-weight: 600;
-  box-shadow: 0 10px 24px rgba(249, 115, 22, 0.55);
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.45);
   border-color: transparent;
 }
 
 .nv-btn-primary:hover {
   transform: translateY(-1px) scale(1.02);
-  background: linear-gradient(135deg, #fb923c, #fde047);
-  box-shadow: 0 16px 36px rgba(249, 115, 22, 0.7);
+  background: linear-gradient(135deg, #059669, #34d399);
+  box-shadow: 0 16px 36px rgba(16, 185, 129, 0.65);
 }
 
 .nv-btn-primary:disabled {
@@ -188,21 +179,23 @@ body {
 }
 
 .nv-btn-outline {
-  background: #22c55e;
-  border-color: #16a34a;
+  background: transparent;
+  border-color: rgba(16, 185, 129, 0.65);
   color: #ffffff;
   font-weight: 600;
+  color: #065f46;
 }
 
 .nv-btn-outline:hover {
-  background: #16a34a;
-  border-color: #15803d;
-  box-shadow: 0 14px 32px rgba(34, 197, 94, 0.75);
+  background: rgba(16, 185, 129, 0.08);
+  border-color: #10b981;
+  box-shadow: 0 14px 32px rgba(16, 185, 129, 0.45);
   transform: translateY(-1px) scale(1.02);
 }
 
 .nv-hero {
   padding: 4.5rem 0 3.5rem;
+  background: radial-gradient(circle at 18% 40%, rgba(110, 231, 183, 0.6), transparent 55%);
 }
 
 .nv-hero-grid {
@@ -262,12 +255,7 @@ body {
 }
 
 .nv-glass-surface {
-  background: radial-gradient(
-    circle at top left,
-    rgba(37, 99, 235, 0.2),
-    rgba(56, 189, 248, 0.09),
-    rgba(15, 23, 42, 0.9)
-  );
+  background: var(--nv-bg-elevated);
   border-radius: var(--nv-radius-lg);
   border: 1px solid var(--nv-border-subtle);
   box-shadow: var(--nv-shadow-soft);
@@ -277,11 +265,26 @@ body {
 .nv-signup-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.1rem;
+}
+
+.nv-signup-header {
+  background: #e0f2fe; /* light blue */
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.nv-signup-topbar {
+  height: 3px;
+  width: 72px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--nv-accent-secondary), var(--nv-accent));
+  margin-bottom: 0.4rem;
 }
 
 .nv-signup-heading h2 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   margin: 0 0 0.2rem;
 }
 
@@ -309,9 +312,9 @@ body {
 }
 
 .nv-field input {
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  background: rgba(15, 23, 42, 0.9);
+  border-radius: 10px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background: #ffffff;
   color: var(--nv-text);
   padding: 0.5rem 0.9rem;
   font-size: 0.85rem;
@@ -322,20 +325,20 @@ body {
 }
 
 .nv-field input::placeholder {
-  color: rgba(148, 163, 184, 0.7);
+  color: rgba(156, 163, 175, 0.9);
 }
 
 .nv-field input:focus,
 .nv-field select:focus {
-  border-color: rgba(56, 189, 248, 0.75);
-  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.55);
-  background: rgba(15, 23, 42, 1);
+  border-color: rgba(16, 185, 129, 0.85);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.6);
+  background: #ffffff;
 }
 
 .nv-field select {
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  background: rgba(15, 23, 42, 0.9);
+  border-radius: 10px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background: #ffffff;
   color: var(--nv-text);
   padding: 0.5rem 0.9rem;
   font-size: 0.85rem;
