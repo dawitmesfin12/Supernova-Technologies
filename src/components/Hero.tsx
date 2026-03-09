@@ -11,17 +11,18 @@ const Hero: React.FC<HeroProps> = () => {
       <div className="nv-container nv-hero-grid">
         <div className="nv-hero-copy">
           <h1>
-            Enterprise-grade software,
-            <span className="nv-accent"> delivered like a startup.</span>
+            We build software
+            <span className="nv-accent"> that runs your business.</span>
           </h1>
           <p className="nv-hero-subtitle">
-            Supernova Technologies designs, builds, and ships custom software for banks, hotels,
-            import/export businesses, and global clients from platforms like Upwork and Toptal.
+            Supernova Technologies is a small, senior team that designs, develops, and maintains
+            digital products for banks, hotels, import/export companies, hospitals, schools, and
+            international clients.
           </p>
           <ul className="nv-hero-points">
-            <li>Custom web apps, portals, and integrations</li>
-            <li>Specialized teams for finance, hospitality, and logistics</li>
-            <li>On-time delivery, clear communication, and long-term support</li>
+            <li>Custom web platforms, portals, dashboards, and public websites</li>
+            <li>End‑to‑end project delivery: discovery, UX/UI design, development, and DevOps</li>
+            <li>Ongoing support so your systems stay secure, fast, and up to date</li>
           </ul>
         </div>
 
