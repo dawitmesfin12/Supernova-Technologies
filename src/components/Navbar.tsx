@@ -33,6 +33,12 @@ const Navbar: React.FC = () => {
             How we work
           </NavLink>
           <NavLink
+            to="/developers"
+            className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
+          >
+            Developers
+          </NavLink>
+          <NavLink
             to="/contact"
             className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
           >
