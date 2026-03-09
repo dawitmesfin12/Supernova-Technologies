@@ -9,15 +9,9 @@ const Navbar: React.FC = () => {
     <header className="nv-navbar">
       <div className="nv-container nv-navbar-inner">
         <div className="nv-brand">
-          <div className="nv-logo-placeholder">
+          <Link to="/" className="nv-logo-placeholder" aria-label="Supernova Technologies home">
             <img src={supernovaLogo} alt="Supernova Technologies logo" className="nv-logo-image" />
-          </div>
-          <div className="nv-brand-text">
-            <Link to="/" className="nv-brand-name">
-              Supernova Technologies
-            </Link>
-            <span className="nv-brand-tagline">Custom software. Stellar delivery.</span>
-          </div>
+          </Link>
         </div>
         <nav className="nv-nav-links">
           <NavLink
