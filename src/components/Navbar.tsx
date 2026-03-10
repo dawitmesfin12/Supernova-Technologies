@@ -1,9 +1,21 @@
 import type React from "react";
+import { useState } from "react";
+import { Drawer, IconButton, List, ListItemButton, ListItemText } from "@mui/material";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import supernovaLogo from "../assets/Component 1.svg";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { to: "/services", label: "Services" },
+    { to: "/industries", label: "Industries" },
+    { to: "/how-we-work", label: "How we work" },
+    { to: "/developers", label: "Developers" },
+    { to: "/contact", label: "Contact" },
+  ];
 
   return (
     <header className="nv-navbar">
@@ -14,41 +26,50 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
         <nav className="nv-nav-links">
-          <NavLink
-            to="/services"
-            className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/industries"
-            className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
-          >
-            Industries
-          </NavLink>
-          <NavLink
-            to="/how-we-work"
-            className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
-          >
-            How we work
-          </NavLink>
-          <NavLink
-            to="/developers"
-            className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
-          >
-            Developers
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
-          >
-            Contact
-          </NavLink>
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => `nv-nav-link${isActive ? " nv-nav-link-active" : ""}`}
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </nav>
-        <button className="nv-btn nv-btn-outline" onClick={() => navigate("/talk-to-us")}>
-          Talk to us
-        </button>
+        <div className="nv-nav-actions">
+          <button className="nv-btn nv-btn-outline nv-nav-cta" onClick={() => navigate("/talk-to-us")}>
+            Talk to us
+          </button>
+          <IconButton
+            aria-label="Toggle navigation"
+            onClick={() => setOpen((prev) => !prev)}
+            className="nv-nav-toggle"
+            size="small"
+          >
+            <MenuRoundedIcon fontSize="small" />
+          </IconButton>
+        </div>
       </div>
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={() => setOpen(false)}
+        ModalProps={{ keepMounted: true }}
+        PaperProps={{ sx: { width: 240 } }}
+      >
+        <List className="nv-nav-mobile">
+          {links.map((link) => (
+            <ListItemButton
+              key={link.to}
+              component={NavLink}
+              to={link.to}
+              onClick={() => setOpen(false)}
+            >
+              <ListItemText primary={link.label} />
+            </ListItemButton>
+          ))}
+        </List>
+      </Drawer>
     </header>
   );
 };
