@@ -1,4 +1,5 @@
 import type React from "react";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -9,8 +10,14 @@ const Footer: React.FC = () => {
           <p>Custom software development studio.</p>
         </div>
         <div className="nv-footer-meta">
-          <span>© {new Date().getFullYear()} Supernova Technologies</span>
-          <span>Let&apos;s build something stellar together.</span>
+          <div className="nv-footer-links">
+            <Link to="/about">About Us</Link>
+            <Link to="/services">Services</Link>
+            <Link to="/privacy">Privacy</Link>
+          </div>
+          <span>
+            Copyright © {new Date().getFullYear()} Supernova Technologies. All Rights Reserved.
+          </span>
         </div>
       </div>
     </footer>

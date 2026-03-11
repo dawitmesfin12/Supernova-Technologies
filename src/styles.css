@@ -31,6 +31,12 @@ body {
 
 .nv-app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 .nv-container {
@@ -44,16 +50,53 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
+  background: transparent;
+}
+
+.nv-topbar {
+  background: #8b5a2b;
+  color: #f9fafb;
+  font-size: 0.75rem;
+  padding: 0.3rem 0;
+}
+
+.nv-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  gap: 1rem;
+}
+
+.nv-topbar-contact {
+  opacity: 0.9;
+}
+
+.nv-topbar-social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+}
+
+.nv-topbar-social span {
+  border-radius: 999px;
+  border: 1px solid rgba(249, 250, 251, 0.5);
+  padding: 0.12rem 0.4rem;
+}
+
+.nv-navbar-inner {
   background: #ffffff;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  margin-top: 0.4rem;
 }
 
 .nv-navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 0;
+  padding: 1.3rem 0;
   gap: 1.5rem;
 }
 
@@ -594,7 +637,7 @@ body {
 
 .nv-footer {
   border-top: 1px solid rgba(148, 163, 184, 0.2);
-  padding: 1.4rem 0 1.6rem;
+  padding: 2.8rem 0 3rem;
   background: radial-gradient(circle at bottom, rgba(15, 23, 42, 1), rgba(2, 6, 23, 1));
 }
 
@@ -622,6 +665,44 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.1rem;
+}
+
+.nv-footer-links {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  margin-bottom: 0.2rem;
+}
+
+.nv-footer-links a {
+  color: var(--nv-text-muted);
+  text-decoration: none;
+}
+
+.nv-footer-links a:hover {
+  color: var(--nv-text);
+  text-decoration: underline;
+}
+
+/* ---------- Responsive layouts ---------- */
+
+@media (max-width: 1100px) {
+  .nv-hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 2.6rem;
+  }
+
+  .nv-hero {
+    background:
+      radial-gradient(circle at 18% 40%, rgba(110, 231, 183, 0.6), transparent 55%),
+      url("./assets/dashboard-illustration.png") right center / 320px auto no-repeat;
+  }
+
+  .nv-features-grid,
+  .nv-testimonials-grid,
+  .nv-dev-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 880px) {
@@ -677,6 +758,11 @@ body {
 
   .nv-dev-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nv-topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nv-actions {
