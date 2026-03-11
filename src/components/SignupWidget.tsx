@@ -107,7 +107,7 @@ const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
                 className="nv-btn nv-btn-primary"
                 disabled={loading || !email.trim()}
               >
-                {loading ? "Submitting..." : "Request a proposal"}
+                {loading ? "Submitting..." : "Request Proposal"}
               </button>
               <p className="nv-helper-text">No spam. Just one clear, tailored response.</p>
             </div>

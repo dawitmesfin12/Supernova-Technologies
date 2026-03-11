@@ -19,6 +19,18 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="nv-navbar">
+      <div className="nv-topbar">
+        <div className="nv-container nv-topbar-inner">
+          <span className="nv-topbar-contact">
+            contact@supernovatech.com · (+251) 900-000-000
+          </span>
+          <div className="nv-topbar-social">
+            <span>Fb</span>
+            <span>In</span>
+            <span>X</span>
+          </div>
+        </div>
+      </div>
       <div className="nv-container nv-navbar-inner">
         <div className="nv-brand">
           <Link to="/" className="nv-logo-placeholder" aria-label="Supernova Technologies home">
