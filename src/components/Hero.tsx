@@ -1,11 +1,7 @@
 import type React from "react";
 import SignupWidget from "./SignupWidget";
 
-interface HeroProps {
-  onCtaClick?: () => void;
-}
-
-const Hero: React.FC<HeroProps> = () => {
+const Hero: React.FC = () => {
   return (
     <section className="nv-hero">
       <div className="nv-container nv-hero-grid">
