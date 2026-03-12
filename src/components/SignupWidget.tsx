@@ -1,11 +1,12 @@
-import type React from "react";
 import { useState } from "react";
+import type { FormEvent } from "react";
+import { serviceOptions } from "../data/services";
 
 interface SignupWidgetProps {
   variant?: "inline" | "card";
 }
 
-const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
+const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
   const [name, setName] = useState("");
   const [service, setService] = useState("");
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
   const [loading, setLoading] = useState(false);
   const [detailsError, setDetailsError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
 
@@ -83,15 +84,11 @@ const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
                   onChange={(e) => setService(e.target.value)}
                 >
                   <option value="">Select a service</option>
-                  <option value="custom-web-platforms">Custom web platforms</option>
-                  <option value="staff-augmentation">Staff augmentation</option>
-                  <option value="ongoing-support">Ongoing support</option>
-                  <option value="banking-financial">Banking &amp; financial services</option>
-                  <option value="hotels-hospitality">Hotels &amp; hospitality</option>
-                  <option value="import-export-logistics">Import, export &amp; logistics</option>
-                  <option value="hospitals-clinics">Hospitals &amp; clinics</option>
-                  <option value="pharma-wholesale">Pharmaceutical wholesalers</option>
-                  <option value="other">Other / not sure yet</option>
+                  {serviceOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>

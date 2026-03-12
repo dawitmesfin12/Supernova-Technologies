@@ -1,6 +1,6 @@
-import type React from "react";
+import { developers } from "../data/developers";
 
-const AboutPage: React.FC = () => {
+const AboutPage = () => {
   return (
     <main className="nv-section">
       <div className="nv-container">
@@ -36,6 +36,37 @@ const AboutPage: React.FC = () => {
                 built from Addis.
               </p>
             </article>
+          </div>
+        </section>
+
+        <section className="nv-section">
+          <div className="nv-section-header">
+            <h2>Our team</h2>
+            <p>
+              A compact team of senior engineers, designers, and project leaders who stay close to
+              your product instead of rotating every few weeks.
+            </p>
+          </div>
+
+          <div className="nv-dev-grid">
+            {developers.map((dev, index) => (
+              <article key={dev.name + index} className="nv-dev-card">
+                <div className="nv-dev-avatar">
+                  {dev.photo ? (
+                    <img src={dev.photo} alt={dev.name} />
+                  ) : (
+                    <span className="nv-dev-avatar-initials">SN</span>
+                  )}
+                </div>
+                <h3 className="nv-dev-name">{dev.name}</h3>
+                <p className="nv-dev-focus">{dev.role}</p>
+                <div className="nv-dev-tags">
+                  <span className="nv-dev-tag">Web</span>
+                  <span className="nv-dev-tag">Apps</span>
+                  <span className="nv-dev-tag">Integrations</span>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       </div>

@@ -1,7 +1,7 @@
-import type React from "react";
 import { Link } from "react-router-dom";
+import { footerLinks } from "../data/navigation";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer id="contact" className="nv-footer">
       <div className="nv-container nv-footer-inner">
@@ -11,9 +11,11 @@ const Footer: React.FC = () => {
         </div>
         <div className="nv-footer-col">
           <div className="nv-footer-links">
-            <Link to="/about">About Us</Link>
-            <Link to="/services">Services</Link>
-            <Link to="/privacy">Privacy</Link>
+            {footerLinks.map((link) => (
+              <Link key={link.to} to={link.to}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
         <div className="nv-footer-col nv-footer-meta">

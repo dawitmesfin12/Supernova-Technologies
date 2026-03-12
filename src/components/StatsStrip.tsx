@@ -1,13 +1,6 @@
-import type React from "react";
+import { stats } from "../data/stats";
 
-const stats = [
-  { label: "Years of experience", value: "6+" },
-  { label: "Projects delivered", value: "40+" },
-  { label: "Industries served", value: "17+" },
-  { label: "Engineers on the team", value: "11" },
-];
-
-const StatsStrip: React.FC = () => {
+const StatsStrip = () => {
   return (
     <section className="nv-section nv-stats-strip">
       <div className="nv-container nv-stats-inner">
