@@ -6,7 +6,6 @@ import ServicesPage from "./pages/ServicesPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import HowWeWorkPage from "./pages/HowWeWorkPage";
 import ContactPage from "./pages/ContactPage";
-import DevelopersPage from "./pages/DevelopersPage";
 import AboutPage from "./pages/AboutPage";
 import PrivacyPage from "./pages/PrivacyPage";
 
@@ -22,7 +21,6 @@ function App() {
           <Route path="/how-we-work" element={<HowWeWorkPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/talk-to-us" element={<ContactPage />} />
-          <Route path="/developers" element={<DevelopersPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>

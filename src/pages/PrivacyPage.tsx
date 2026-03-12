@@ -1,6 +1,4 @@
-import type React from "react";
-
-const PrivacyPage: React.FC = () => {
+const PrivacyPage = () => {
   return (
     <main className="nv-section">
       <div className="nv-container">

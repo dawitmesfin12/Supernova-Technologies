@@ -1,7 +1,6 @@
-import type React from "react";
 import SignupWidget from "../components/SignupWidget";
 
-const ContactPage: React.FC = () => {
+const ContactPage = () => {
   return (
     <main className="nv-section">
       <div className="nv-container nv-hero-grid">

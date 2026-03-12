@@ -1,6 +1,4 @@
-import type React from "react";
-
-const HowWeWorkPage: React.FC = () => {
+const HowWeWorkPage = () => {
   return (
     <main className="nv-section">
       <div className="nv-container">

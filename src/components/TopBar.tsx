@@ -1,8 +1,7 @@
-import type React from "react";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneInTalkOutlinedIcon from "@mui/icons-material/PhoneInTalkOutlined";
 
-const TopBar: React.FC = () => {
+const TopBar = () => {
   return (
     <div className="nv-topbar">
       <div className="nv-container nv-topbar-inner">

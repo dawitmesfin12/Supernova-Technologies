@@ -1,6 +1,4 @@
-import type React from "react";
-
-const Features: React.FC = () => {
+const Features = () => {
   return (
     <section id="services" className="nv-section">
       <div className="nv-container">

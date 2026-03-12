@@ -1,7 +1,6 @@
-import type React from "react";
 import Industries from "../components/Industries";
 
-const IndustriesPage: React.FC = () => {
+const IndustriesPage = () => {
   return (
     <main>
       <Industries />

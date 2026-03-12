@@ -1,6 +1,4 @@
-import type React from "react";
-
-const Industries: React.FC = () => {
+const Industries = () => {
   return (
     <section id="industries" className="nv-section">
       <div className="nv-container">
