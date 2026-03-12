@@ -470,9 +470,10 @@ main {
 }
 
 .nv-stat-value {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--nv-accent);
+  font-variant-numeric: tabular-nums;
 }
 
 .nv-stat-label {

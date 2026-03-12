@@ -1,11 +1,12 @@
 export interface Stat {
   label: string;
-  value: string;
+  target: number;
+  suffix: string;
 }
 
 export const stats: Stat[] = [
-  { label: "Years of experience", value: "6+" },
-  { label: "Projects delivered", value: "40+" },
-  { label: "Industries served", value: "17+" },
-  { label: "Engineers on the team", value: "11" },
+  { label: "Years of experience", target: 6, suffix: "+" },
+  { label: "Projects delivered", target: 40, suffix: "+" },
+  { label: "Industries served", target: 17, suffix: "+" },
+  { label: "Engineers on the team", target: 11, suffix: "" },
 ];
