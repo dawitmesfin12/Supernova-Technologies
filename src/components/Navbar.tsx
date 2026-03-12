@@ -4,6 +4,7 @@ import { Drawer, IconButton, List, ListItemButton, ListItemText } from "@mui/mat
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import supernovaLogo from "../assets/Component 1.svg";
+import TopBar from "./TopBar";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -19,18 +20,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="nv-navbar">
-      <div className="nv-topbar">
-        <div className="nv-container nv-topbar-inner">
-          <span className="nv-topbar-contact">
-            contact@supernovatech.com · (+251) 900-000-000
-          </span>
-          <div className="nv-topbar-social">
-            <span>Fb</span>
-            <span>In</span>
-            <span>X</span>
-          </div>
-        </div>
-      </div>
+      <TopBar />
       <div className="nv-container nv-navbar-inner">
         <div className="nv-brand">
           <Link to="/" className="nv-logo-placeholder" aria-label="Supernova Technologies home">
