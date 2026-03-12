@@ -55,9 +55,9 @@ main {
 }
 
 .nv-topbar {
-  background: #8b5a2b;
+  background: #7aaace;
   color: #f9fafb;
-  font-size: 0.75rem;
+  font-size: 1.4rem;
   padding: 0.3rem 0;
 }
 
@@ -71,6 +71,17 @@ main {
 
 .nv-topbar-contact {
   opacity: 0.9;
+  font-weight: 600;
+}
+
+.nv-topbar-icon {
+  margin-right: 0.25rem;
+}
+
+.nv-topbar-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .nv-topbar-social {
@@ -101,9 +112,9 @@ main {
 }
 
 .nv-logo-placeholder {
-  width: 180px;
-  height: 56px;
-  padding: 4px 10px;
+  width: 260px;
+  height: 80px;
+  padding: 6px 14px;
   border-radius: 12px;
   background: #ffffff;
   display: flex;
