@@ -1,14 +1,20 @@
 import type React from "react";
+import henokPhoto from "../assets/DevPhotos/Henok Tesfaye.png";
+import mezigebuPhoto from "../assets/DevPhotos/Mezigebu Zeworq.jpg";
+import dawitPhoto from "../assets/DevPhotos/Dawit Mesfin.jpg";
+import ermiyasPhoto from "../assets/DevPhotos/Ermiyas Mesfin.jpg";
+import dianaPhoto from "../assets/DevPhotos/Diana M.jpg";
+import anaPhoto from "../assets/DevPhotos/Ana Woldu.jpg";
 
 const developers = [
-  { name: "Henok Tesfaye", role: "Full‑Stack Developer" },
-  { name: "Mezigebu Zeworq", role: "CEO & Owner" },
-  { name: "Dawit Mesfin", role: "CTO & Core Developer" },
-  { name: "Ermiyas Mesfin", role: "Mobile Developer" },
-  { name: "Yibela D", role: "QA & Automation Engineer" },
-  { name: "Diana M", role: "Product Designer" },
-  { name: "Ana Woldu", role: "Project Manager" },
-  { name: "Yilkal G", role: "DevOps Engineer" },
+  { name: "Mezigebu Zeworq", role: "CEO & Owner", photo: mezigebuPhoto },
+  { name: "Dawit Mesfin", role: "CTO & Core Developer", photo: dawitPhoto },
+  { name: "Henok Tesfaye", role: "Full‑Stack Developer", photo: henokPhoto },
+  { name: "Ermiyas Mesfin", role: "Mobile Developer", photo: ermiyasPhoto },
+  { name: "Yibela D", role: "QA & Automation Engineer", photo: undefined },
+  { name: "Diana M", role: "Product Designer", photo: dianaPhoto },
+  { name: "Ana Woldu", role: "Project Manager", photo: anaPhoto },
+  { name: "Yilkal G", role: "DevOps Engineer", photo: undefined },
 ];
 
 const DevelopersPage: React.FC = () => {
@@ -27,7 +33,11 @@ const DevelopersPage: React.FC = () => {
           {developers.map((dev, index) => (
             <article key={dev.name + index} className="nv-dev-card">
               <div className="nv-dev-avatar">
-                <span className="nv-dev-avatar-initials">SN</span>
+                {dev.photo ? (
+                  <img src={dev.photo} alt={dev.name} />
+                ) : (
+                  <span className="nv-dev-avatar-initials">SN</span>
+                )}
               </div>
               <h3 className="nv-dev-name">{dev.name}</h3>
               <p className="nv-dev-focus">{dev.role}</p>
