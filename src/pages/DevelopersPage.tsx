@@ -2,8 +2,8 @@ import type React from "react";
 
 const developers = [
   { name: "Henok Tesfaye", role: "Full‑Stack Developer" },
-  { name: "Mezigebu Zeworq", role: "Backend Developer" },
-  { name: "Dawit Mesfin", role: "Frontend Developer" },
+  { name: "Mezigebu Zeworq", role: "CEO & Owner" },
+  { name: "Dawit Mesfin", role: "CTO & Core Developer" },
   { name: "Ermiyas Mesfin", role: "Mobile Developer" },
   { name: "Yibela D", role: "QA & Automation Engineer" },
   { name: "Diana M", role: "Product Designer" },
