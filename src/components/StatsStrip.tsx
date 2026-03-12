@@ -3,8 +3,8 @@ import type React from "react";
 const stats = [
   { label: "Years of experience", value: "6+" },
   { label: "Projects delivered", value: "40+" },
-  { label: "Industries served", value: "6+" },
-  { label: "Engineers on the team", value: "8" },
+  { label: "Industries served", value: "17+" },
+  { label: "Engineers on the team", value: "11" },
 ];
 
 const StatsStrip: React.FC = () => {
