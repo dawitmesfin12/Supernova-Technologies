@@ -1,22 +1,14 @@
-import type React from "react";
 import { useState } from "react";
 import { Drawer, IconButton, List, ListItemButton, ListItemText } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import supernovaLogo from "../assets/Component 1.svg";
+import supernovaLogo from "../assets/supernova-logo.svg";
+import { navLinks } from "../data/navigation";
 import TopBar from "./TopBar";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-
-  const links = [
-    { to: "/services", label: "Services" },
-    { to: "/industries", label: "Industries" },
-    { to: "/how-we-work", label: "How we work" },
-    { to: "/developers", label: "Developers" },
-    { to: "/contact", label: "Contact" },
-  ];
 
   return (
     <header className="nv-navbar">
@@ -28,7 +20,7 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
         <nav className="nv-nav-links">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <NavLink
               key={link.to}
               to={link.to}
@@ -60,7 +52,7 @@ const Navbar: React.FC = () => {
         PaperProps={{ sx: { width: 240 } }}
       >
         <List className="nv-nav-mobile">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <ListItemButton
               key={link.to}
               component={NavLink}
