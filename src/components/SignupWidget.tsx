@@ -9,12 +9,19 @@ const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
   const [name, setName] = useState("");
   const [service, setService] = useState("");
   const [email, setEmail] = useState("");
+  const [details, setDetails] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [detailsError, setDetailsError] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
+
+    if (!details.trim()) {
+      setDetailsError("Tell us briefly what you want us to design or build.");
+      return;
+    }
 
     setLoading(true);
 
@@ -101,13 +108,34 @@ const SignupWidget: React.FC<SignupWidgetProps> = ({ variant = "inline" }) => {
               />
             </div>
 
+            <div className="nv-field">
+              <label htmlFor="nv-details">
+                Briefly describe what you want us to build{" "}
+                <span className="nv-optional">(up to 400 words)</span>
+              </label>
+              <textarea
+                id="nv-details"
+                rows={4}
+                maxLength={400 * 6} // simple upper guard, UI guidance is 400 words
+                placeholder="For example: a booking website for our hotel with online payments and an admin dashboard for staff..."
+                value={details}
+                onChange={(e) => {
+                  setDetails(e.target.value);
+                  if (detailsError && e.target.value.trim()) {
+                    setDetailsError("");
+                  }
+                }}
+              />
+              {detailsError ? <p className="nv-field-error">{detailsError}</p> : null}
+            </div>
+
             <div className="nv-actions">
               <button
                 type="submit"
                 className="nv-btn nv-btn-primary"
                 disabled={loading || !email.trim()}
               >
-                {loading ? "Submitting..." : "Request Proposal"}
+                {loading ? "Submitting..." : "Request   Proposal"}
               </button>
               <p className="nv-helper-text">No spam. Just one clear, tailored response.</p>
             </div>

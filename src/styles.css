@@ -381,7 +381,8 @@ main {
 }
 
 .nv-field input:focus,
-.nv-field select:focus {
+.nv-field select:focus,
+.nv-field textarea:focus {
   border-color: rgba(16, 185, 129, 0.85);
   box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.6);
   background: #ffffff;
@@ -400,6 +401,25 @@ main {
   display: block;
 }
 
+.nv-field textarea {
+  border-radius: 10px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background: #ffffff;
+  color: var(--nv-text);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.85rem;
+  resize: vertical;
+  min-height: 120px;
+  max-height: 260px;
+  outline: none;
+  transition: border-color 0.17s ease, box-shadow 0.17s ease, background 0.17s ease;
+}
+
+.nv-optional {
+  font-size: 0.7rem;
+  color: var(--nv-text-muted);
+}
+
 .nv-actions {
   display: flex;
   align-items: center;
@@ -411,6 +431,12 @@ main {
 .nv-helper-text {
   font-size: 0.75rem;
   color: var(--nv-text-muted);
+}
+
+.nv-field-error {
+  margin: 0.2rem 0 0;
+  font-size: 0.75rem;
+  color: #dc2626;
 }
 
 .nv-signup-success {
@@ -692,8 +718,8 @@ main {
 }
 
 .nv-dev-avatar {
-  width: 80px;
-  height: 80px;
+  width: 104px;
+  height: 104px;
   border-radius: 999px;
   margin: 0 auto 0.8rem;
   background: radial-gradient(circle at top, #fecaca, #f97373);
@@ -701,6 +727,13 @@ main {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.nv-dev-avatar img {
+  width: 130%;
+  height: 130%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nv-dev-avatar-initials {
