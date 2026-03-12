@@ -5,10 +5,10 @@ const Testimonials = () => {
     <section className="nv-section">
       <div className="nv-container">
         <div className="nv-section-header">
-          <h2>Trusted by leading Ethiopian brands</h2>
+          <h2>What our clients say</h2>
           <p>
-            Banks, hotels, and hospitality groups in Ethiopia rely on Supernova Technologies to run
-            their day-to-day operations.
+            Hospitals, hotels, wholesalers, and growing businesses across Ethiopia trust Supernova
+            Technologies to build and run the software behind their daily operations.
           </p>
         </div>
 
@@ -17,7 +17,7 @@ const Testimonials = () => {
             <figure key={item.id} className="nv-testimonial-card nv-glass-surface">
               <div className="nv-testimonial-header">
                 <div className="nv-avatar">
-                  <img src={item.logo} alt={`${item.company} logo`} />
+                  <span className="nv-avatar-initials">{item.initials}</span>
                 </div>
                 <div>
                   <figcaption className="nv-testimonial-name">{item.name}</figcaption>
@@ -28,7 +28,7 @@ const Testimonials = () => {
                   </div>
                 </div>
               </div>
-              <blockquote className="nv-testimonial-quote">“{item.quote}”</blockquote>
+              <blockquote className="nv-testimonial-quote">"{item.quote}"</blockquote>
             </figure>
           ))}
         </div>
@@ -38,4 +38,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-

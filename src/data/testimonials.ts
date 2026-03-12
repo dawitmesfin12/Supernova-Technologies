@@ -1,10 +1,6 @@
-import awashBankLogo from "../assets/awash-bank-logo.svg";
-import ethiopianAirlinesLogo from "../assets/ethiopian-airlines-logo.svg";
-import skylightHotelLogo from "../assets/skylight-hotel-logo.svg";
-
 export interface Testimonial {
   id: number;
-  logo: string;
+  initials: string;
   company: string;
   name: string;
   role: string;
@@ -14,29 +10,38 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    logo: awashBankLogo,
-    company: "Awash Bank (Ethiopia)",
-    name: "M. Bekele",
-    role: "Digital Channels Director",
+    initials: "GU",
+    company: "Gondar University Hospital",
+    name: "Dr. Abebe T.",
+    role: "Medical Director",
     quote:
-      "Supernova Technologies delivered our new corporate banking portal on time and with zero downtime at launch. Their team understood both the technical and regulatory side of Ethiopian banking.",
+      "Supernova built a patient records and appointment system that our staff actually uses every day. Wait times are down, data is easier to find, and the system fits our workflow instead of forcing us to change it.",
   },
   {
     id: 2,
-    logo: skylightHotelLogo,
-    company: "Skylight Hotel Addis",
-    name: "S. Tesfaye",
-    role: "General Manager",
+    initials: "JH",
+    company: "Jakaranda Hotel, Bahir Dar",
+    name: "Yohannes K.",
+    role: "Operations Manager",
     quote:
-      "Our new booking and property management tools have reduced manual work for the front desk and reservations teams. Guests are checking in faster and we have better visibility across the hotel.",
+      "Our new booking platform and front-desk dashboard replaced three separate spreadsheets. Guests get faster check-ins, and we finally have real-time occupancy data across all our rooms.",
   },
   {
     id: 3,
-    logo: ethiopianAirlinesLogo,
-    company: "Ethiopian Hospitality Group",
-    name: "H. Alemu",
-    role: "Group IT Lead",
+    initials: "DS",
+    company: "Dr. Seyoum Pharmaceutical Wholesale",
+    name: "Seyoum A.",
+    role: "Owner & Managing Director",
     quote:
-      "Working with Supernova feels like working with an internal product team. Communication is clear, releases are predictable, and they are quick to support new ideas from our business units.",
+      "Tracking inventory and expiry dates used to take hours. Supernova delivered an ordering and stock management system that keeps us compliant and saves my team an entire day of manual work each week.",
+  },
+  {
+    id: 4,
+    initials: "TA",
+    company: "Tana Axion",
+    name: "Mulugeta D.",
+    role: "General Manager",
+    quote:
+      "We needed a reliable platform to manage our operations and client communications. Supernova understood our business from day one and delivered a clean, fast system that our whole team trusts.",
   },
 ];
