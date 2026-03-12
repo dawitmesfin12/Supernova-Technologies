@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { stats } from "../data/stats";
 
-const DURATION_MS = 2000;
+const DURATION_MS = 3500;
 
 function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3);
