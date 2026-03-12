@@ -13,8 +13,8 @@ const PrivacyPage: React.FC = () => {
         </div>
 
         <section className="nv-section">
-          <div className="nv-features-grid">
-            <article className="nv-feature-card">
+          <div className="nv-about-grid">
+            <article>
               <h3>Information we collect</h3>
               <p>
                 When you contact us through forms or email, we collect the details you provide, such
@@ -24,7 +24,7 @@ const PrivacyPage: React.FC = () => {
               </p>
             </article>
 
-            <article className="nv-feature-card">
+            <article>
               <h3>How we use your information</h3>
               <p>
                 We use your information to respond to your requests, prepare proposals, deliver
@@ -35,7 +35,7 @@ const PrivacyPage: React.FC = () => {
               </p>
             </article>
 
-            <article className="nv-feature-card">
+            <article>
               <h3>Data security and retention</h3>
               <p>
                 We take reasonable technical and organizational measures to protect the information
@@ -46,7 +46,7 @@ const PrivacyPage: React.FC = () => {
               </p>
             </article>
 
-            <article className="nv-feature-card">
+            <article>
               <h3>Your choices</h3>
               <p>
                 You can contact us at any time if you want to review, update, or delete information
