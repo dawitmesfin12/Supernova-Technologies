@@ -803,6 +803,7 @@ main {
 
 /* ---------- Responsive layouts ---------- */
 
+/* --- Tablet landscape / small desktop --- */
 @media (max-width: 1100px) {
   .nv-hero-grid {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -821,11 +822,31 @@ main {
   .nv-steps-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .nv-logo-placeholder {
+    width: 200px;
+    height: 62px;
+    padding: 4px 10px;
+  }
 }
 
+/* --- Tablet portrait / large phone --- */
 @media (max-width: 880px) {
+  .nv-topbar {
+    font-size: 0.82rem;
+    padding: 0.25rem 0;
+  }
+
+  .nv-topbar-inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.4rem 0;
+  }
+
   .nv-navbar-inner {
     flex-wrap: wrap;
+    padding: 0.8rem 0;
   }
 
   .nv-nav-links {
@@ -845,12 +866,57 @@ main {
     border-bottom: 1px solid rgba(148, 163, 184, 0.25);
   }
 
+  .nv-logo-placeholder {
+    width: 180px;
+    height: 54px;
+    padding: 4px 8px;
+  }
+
+  .nv-hero {
+    padding: 3rem 0 2.5rem;
+  }
+
   .nv-hero-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .nv-hero-signup {
     justify-content: flex-start;
+  }
+
+  .nv-section {
+    padding: 2rem 0 2.5rem;
+  }
+
+  .nv-section-header {
+    margin-bottom: 1.6rem;
+  }
+
+  .nv-section-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .nv-features-grid,
+  .nv-about-grid,
+  .nv-steps-row,
+  .nv-testimonials-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nv-stats-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nv-industry-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nv-step-arrow {
+    display: none;
+  }
+
+  .nv-dev-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .nv-footer-inner {
@@ -863,60 +929,42 @@ main {
     align-items: flex-start;
   }
 
-  .nv-features-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nv-stats-inner {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .nv-about-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nv-steps-row {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nv-step-arrow {
-    display: none;
-  }
-
-  .nv-testimonials-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .nv-dev-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .nv-topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .nv-actions {
     flex-direction: column;
     align-items: flex-start;
   }
 
   .nv-glass-surface {
-    box-shadow: 0 18px 35px rgba(15, 23, 42, 0.85);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.16);
+  }
+
+  .nv-btn {
+    font-size: 0.84rem;
+    padding: 0.5rem 1.1rem;
   }
 }
 
+/* --- Phone --- */
 @media (max-width: 640px) {
-  .nv-dev-grid {
-    grid-template-columns: minmax(0, 1fr);
+  .nv-topbar {
+    font-size: 0.75rem;
   }
 
-  .nv-stats-inner {
-    grid-template-columns: minmax(0, 1fr);
+  .nv-topbar-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.35rem 0;
+  }
+
+  .nv-logo-placeholder {
+    width: 160px;
+    height: 48px;
+    padding: 3px 6px;
   }
 
   .nv-hero {
-    padding: 3.2rem 0 2.8rem;
+    padding: 2.5rem 0 2rem;
   }
 
   .nv-hero::before {
@@ -925,12 +973,71 @@ main {
     opacity: 0.08;
   }
 
+  .nv-hero-copy h1 {
+    font-size: 1.7rem;
+  }
+
+  .nv-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
   .nv-hero-grid {
-    gap: 2.2rem;
+    gap: 2rem;
   }
 
   .nv-signup-card {
     max-width: 100%;
+  }
+
+  .nv-section {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .nv-section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .nv-section-header p {
+    font-size: 0.88rem;
+  }
+
+  .nv-dev-grid,
+  .nv-stats-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nv-container {
+    padding: 0 1rem;
+  }
+
+  .nv-footer {
+    padding: 2rem 0 1.6rem;
+  }
+
+  .nv-footer-inner {
+    gap: 1.4rem;
+    font-size: 0.75rem;
+  }
+
+  .nv-dev-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nv-dev-card {
+    padding: 1.2rem 1rem 1.2rem;
+  }
+
+  .nv-testimonial-card {
+    padding: 1.1rem 1rem 1rem;
+  }
+
+  .nv-feature-card {
+    padding: 1rem 1.1rem 1rem 1.4rem;
+  }
+
+  .nv-step-card {
+    padding: 1rem 1rem 0.9rem;
   }
 }
 
