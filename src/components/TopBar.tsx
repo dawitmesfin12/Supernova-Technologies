@@ -11,7 +11,7 @@ const TopBar = () => {
         </span>
         <span className="nv-topbar-contact-item">
           <PhoneInTalkOutlinedIcon fontSize="inherit" className="nv-topbar-icon" />
-          <span>(+251) 963-711-1971</span>
+          <span>(+251) 983-85-4090</span>
         </span>
       </div>
     </div>
