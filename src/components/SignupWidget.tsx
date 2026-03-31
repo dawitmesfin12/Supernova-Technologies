@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { serviceOptions } from "../data/services";
 
@@ -24,6 +24,7 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [detailsError, setDetailsError] = useState("");
+  const widgetRef = useRef<HTMLDivElement>(null);
 
   const wordCount = countWords(details);
   const emailValid = isValidEmail(email.trim());
@@ -63,6 +64,9 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
+      requestAnimationFrame(() => {
+        widgetRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
     }, 800);
   };
 
@@ -70,7 +74,7 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
     variant === "card" ? "nv-signup-card nv-glass-surface" : "nv-signup-inline";
 
   return (
-    <div className={containerClass}>
+    <div ref={widgetRef} className={containerClass}>
       <form className="nv-signup-form" onSubmit={handleSubmit}>
         {!submitted && (
           <div className="nv-signup-header">
