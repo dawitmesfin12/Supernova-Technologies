@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { serviceOptions } from "../data/services";
 
@@ -31,6 +31,21 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
   const detailsValid = wordCount >= MIN_WORDS && wordCount <= MAX_WORDS;
   const formReady = emailValid && detailsValid;
 
+  useEffect(() => {
+    if (!submitted) return;
+    (document.activeElement as HTMLElement)?.blur();
+
+    const timer = setTimeout(() => {
+      const el = widgetRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const absoluteTop = rect.top + window.pageYOffset - 80;
+      window.scrollTo({ top: Math.max(0, absoluteTop), behavior: "smooth" });
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, [submitted]);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
@@ -61,12 +76,10 @@ const SignupWidget = ({ variant = "inline" }: SignupWidgetProps) => {
 
     setLoading(true);
 
+    (document.activeElement as HTMLElement)?.blur();
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      requestAnimationFrame(() => {
-        widgetRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      });
     }, 800);
   };
 
